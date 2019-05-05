@@ -32,7 +32,7 @@ body {
     border-radius: 5px;
 }
 
-#display:empty:before {content: '\a0';}
+#displayText:empty:before {content: '\a0';}
 
 #displayBorder {
     grid-area: 1/1/2/3;
