@@ -9,3 +9,5 @@ function screenDisplay() {
     const display = document.querySelector('#displayText');
     display.value = calculator.displayValue;
 }
+
+screenDisplay();
