@@ -11,3 +11,28 @@ function screenDisplay() {
 }
 
 screenDisplay();
+
+const keys = document.querySelector('.buttons');
+keys.addEventListener('click', (event) => {
+    const { target } = event;
+    if (!target.matches('button')) {
+        return;
+    }
+
+    if (target.classList.contains('operator')) {
+
+        return;
+    }
+
+    if (target.classList.contains('decimal')) {
+
+        return;
+    }
+
+    if (target.classList.contains('clear')) {
+
+        return;
+    }
+
+
+});
