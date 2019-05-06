@@ -5,6 +5,11 @@ const calc = {
     operator: null,
 };
 
+function inputNum(num) {
+    const { displayValue } = calc;
+    calc.displayValue = displayValue === '0' ? num : displayValue + num;
+}
+
 function screenDisplay() {
     const display = document.querySelector('#displayText');
     display.value = calculator.displayValue;
