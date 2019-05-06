@@ -10,9 +10,15 @@ function inputNum(num) {
     calc.displayValue = displayValue === '0' ? num : displayValue + num;
 }
 
+function inputDecimal(dot) {
+    if (!calc.displayValue.includes(dot)) {
+        calc.displayValue += dot;
+    }
+}
+
 function screenDisplay() {
     const display = document.querySelector('#displayText');
-    display.value = calculator.displayValue;
+    display.value = calc.displayValue;
 }
 
 screenDisplay();
@@ -30,7 +36,8 @@ keys.addEventListener('click', (event) => {
     }
 
     if (target.classList.contains('decimal')) {
-
+        inputDecimal(target.value);
+        screenDisplay();
         return;
     }
 
@@ -39,5 +46,6 @@ keys.addEventListener('click', (event) => {
         return;
     }
 
-
+    inputNum(target.value);
+    screenDisplay();
 });
