@@ -52,6 +52,13 @@ const operations = {
     '=': (firstOperand, secondOperand) => secondOperand,
 }
 
+function resetCalc() {
+    calc.displayValue = '0';
+    calc.firstOperand = null;
+    calc.waitingForSecondOperand = false;
+    calc.operator = null;
+}
+
 function screenDisplay() {
     const display = document.querySelector('#displayText');
     display.value = calc.displayValue;
@@ -79,7 +86,8 @@ keys.addEventListener('click', (event) => {
     }
 
     if (target.classList.contains('clear')) {
-
+        resetCalc(target.value);
+        screenDisplay();
         return;
     }
 
