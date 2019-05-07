@@ -50,9 +50,8 @@ calc#displayText:empty:before {content: '\a0';}
     cursor: text;
 }
 
-calc#displayText{
+input{
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 20px;
 }
 
 button {
