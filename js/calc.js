@@ -17,6 +17,9 @@ function inputNum(num) {
 }
 
 function inputDecimal(dot) {
+    if (calc.waitingForSecondOperand === true) {
+        return;
+    }
     if (!calc.displayValue.includes(dot)) {
         calc.displayValue += dot;
     }
