@@ -26,10 +26,16 @@ function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calc;
     const inputValue = parseFloat(displayValue).toFixed(2);
 
+    if (operator && waitingForSecondOperand) {
+        calc.operator = nextOperator;
+        return;
+    }
+
     if (firstOperand === null) {
         calc.firstOperand = inputValue;
     } else if (operator) {
-        const result = operations[operator](firstOperand, inputValue);
+        const currentValue = firstOperand || 0;
+        const result = operations[operator](currentValue, inputValue);
         calc.displayValue = String(result);
         calc.firstOperand = result;
     }
