@@ -29,7 +29,7 @@ function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calc;
     const inputValue = parseFloat(displayValue).toFixed(2);
 
-    if (operator && waitingForSecondOperand) {
+    if (operator && calc.waitingForSecondOperand) {
         calc.operator = nextOperator;
         return;
     }
