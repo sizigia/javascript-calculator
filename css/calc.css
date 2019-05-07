@@ -52,6 +52,8 @@ calc#displayText:empty:before {content: '\a0';}
 
 input{
     font-family: 'Noto Sans JP', sans-serif;
+    padding: 0px 20px;
+    text-align: right;
 }
 
 button {
@@ -61,6 +63,8 @@ button {
     font-family: 'Gugi', cursive;
     border: 0;
     padding: 0;
+    background-color: initial;
+    color: white;
 }
 
 .buttons{
@@ -70,20 +74,15 @@ button {
     grid-template-rows: repeat(5, auto);
 }
 
-button#right{
-    justify-items: center;
-    align-items: center;
-}
-
-button#left{
-    align-items: center;
-    justify-items: center;
-}
-
 #right{
     grid-area: 1/4/6/5;
     display: grid;
     grid-template-columns: auto;
+    background-color: grey;
+}
+
+button:hover{ 
+    background-color: darkseagreen;
 }
 
 #left{
@@ -91,4 +90,5 @@ button#left{
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: repeat(4, auto);
+    background-color: darkolivegreen;
 }
