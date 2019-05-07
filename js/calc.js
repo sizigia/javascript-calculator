@@ -70,30 +70,30 @@ function screenDisplay() {
 screenDisplay();
 
 const keys = document.querySelector('.buttons');
-keys.addEventListener('click', (event) => {
-    const { target } = event;
-    if (!target.matches('button')) {
-        return;
-    }
+keys.addEventListener('click', displayKeys());
 
-    if (target.classList.contains('operator')) {
-        handleOperator(target.value);
+function displayKeys() {
+    return (event) => {
+        const { target } = event;
+        if (!target.matches('button')) {
+            return;
+        }
+        if (target.classList.contains('operator')) {
+            handleOperator(target.value);
+            screenDisplay();
+            return;
+        }
+        if (target.classList.contains('decimal')) {
+            inputDecimal(target.value);
+            screenDisplay();
+            return;
+        }
+        if (target.classList.contains('clear')) {
+            resetCalc(target.value);
+            screenDisplay();
+            return;
+        }
+        inputNum(target.value);
         screenDisplay();
-        return;
-    }
-
-    if (target.classList.contains('decimal')) {
-        inputDecimal(target.value);
-        screenDisplay();
-        return;
-    }
-
-    if (target.classList.contains('clear')) {
-        resetCalc(target.value);
-        screenDisplay();
-        return;
-    }
-
-    inputNum(target.value);
-    screenDisplay();
-});
+    };
+}
